@@ -20,7 +20,7 @@
     <!-- Order could not be found -->
   <iselse>
     <script type="text/javascript">
-      _talkableq.push(["register_purchase", <isprint value="${talkableData}" encoding="off"/>]);
+      _talkableq.push(["register_purchase", JSON.parse("<isprint value="${talkableData}" encoding="jsonvalue"/>")]);
     </script>
   </isif>
   <!-- End Talkable integration code -->
