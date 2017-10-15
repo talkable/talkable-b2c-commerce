@@ -71,7 +71,7 @@ var TalkableHelper = function() {
 
       var shipments : Iterator = order.shipments.iterator();
       for each(var shipment : Shipment in shipments) {
-        if (shipment.shippingAddress && shipment.custom.shipmentType !== "instore") {
+        if (shipment.shippingAddress && (empty(shipment.custom.shipmentType) || shipment.custom.shipmentType !== "instore")) {
           data.purchase.shipping_address = this._getFullAddress(shipment.shippingAddress);
           data.purchase.shipping_zip = shipment.shippingAddress.postalCode;
           break;
