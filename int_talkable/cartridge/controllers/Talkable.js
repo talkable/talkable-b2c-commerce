@@ -28,3 +28,10 @@ exports.Standalone = guard.ensure(["get"], function() {
     app.getView().render("error/notfound");
   }
 });
+
+/**
+ * Renders HEAD Template
+ */
+exports.Head = guard.ensure(["get"], function() {
+  app.getView().render("talkable/head");
+});
