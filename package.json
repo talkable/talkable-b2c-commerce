@@ -52,7 +52,7 @@
     "flag-icon-css": "^2.9.0",
     "font-awesome": "^4.7.0",
     "glob": "^7.1.6",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "njre": "^0.2.0",
     "path": "^0.12.7"
   },
