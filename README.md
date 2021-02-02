@@ -1,2 +1,1 @@
-Talkable integration for Demandware
-===================================
+# UK-OSF-ITB-Talkable-Certification-SFCC
