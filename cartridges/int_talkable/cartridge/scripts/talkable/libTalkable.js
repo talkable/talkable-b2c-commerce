@@ -7,9 +7,9 @@
  */
 function TalkableHelper() {
     return {
-        // ------------------------+
-        // Talkable Configuration |"
-        // ------------------------+"
+        // -----------------------+
+        // Talkable Configuration |
+        // -----------------------+
 
         getSiteId: function () {
             var Site = require("dw/system/Site");
@@ -26,9 +26,9 @@ function TalkableHelper() {
             );
         },
 
-        // --------------------+
+        // -------------------+
         // Talkable Campaigns |
-        // --------------------+
+        // -------------------+
 
         isDashboardEnabled: function () {
             return (
@@ -55,9 +55,9 @@ function TalkableHelper() {
             ); // Hide Floating Widget on the Checkout Success page
         },
 
-        // -------------+
+        // ------------+
         // Origin Data |
-        // -------------+
+        // ------------+
 
         /* ----------------------------------------------------------------------------------//
       For debugging, put this at the bottom of talkable/head.isml:
@@ -143,9 +143,9 @@ function TalkableHelper() {
             return JSON.stringify(data);
         },
 
-        // ---------+
+        // --------+
         // Private |
-        // ---------+
+        // --------+
 
         isEnabled: function (value) {
             var Site = require("dw/system/Site");
