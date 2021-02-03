@@ -1,6 +1,6 @@
 {
   "name": "talkable",
-  "version": "20.1.0",
+  "version": "21.1.0",
   "description": "talkable npm package",
   "main": "index.js",
   "engines": {
