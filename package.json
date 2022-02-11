@@ -1,6 +1,6 @@
 {
   "name": "talkable",
-  "version": "21.1.0",
+  "version": "22.1.0",
   "description": "talkable npm package",
   "main": "index.js",
   "engines": {
@@ -9,11 +9,11 @@
   "scripts": {
     "test": "sgmf-scripts --test test/unit/**/*.js",
     "test:integration": "sgmf-scripts --integration 'test/integration/**/*.js'",
-    "test:functional": "node ./test/functional/index.js",
+    "build": "echo nothing to build",
     "lint": "npm run lint:js",
     "lint:js": "sgmf-scripts --lint js",
     "upload": "sgmf-scripts --upload",
-    "uploadCartridge": "sgmf-scripts --uploadCartridge int_talkable"
+    "uploadCartridge": "sgmf-scripts --uploadCartridge int_talkable && sgmf-scripts --uploadCartridge talkable_sfra_custom && sgmf-scripts --uploadCartridge talkable_sg_custom"
   },
   "homepage": "https://github.com/SalesforceCommerceCloud/storefront-reference-architecture",
   "devDependencies": {

@@ -7,6 +7,20 @@
  */
 function TalkableHelper() {
     return {
+        encryptParam: function (plain) {
+            var Bytes = require("dw/util/Bytes");
+            var Cipher = require("dw/crypto/Cipher");
+            var Encoding = require("dw/crypto/Encoding");
+
+            var pemKey = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtE/M4y40S6GmRmy8hudsFwe7Edk0MyA+D0osGzR751ZTYPpJxZFkwE06XauPVsH4YUzFjI9Dso/szMMe/IN1OFfe9R0PBuG7SaDmXJydXsj0tU4OirGIjrXUiqrf4LajbuRHQMif3TbHu5w3RtHhzWsiG6UT6VJ3kLJ/Ti77izQTNL523VNbBNxFT2OiipznaxXTcHNay6MztO0Bl6VkvJStv9Laidpy2XVGbxq/JjjEvySkhvSL7Hji6ucwycI8pkhl1Etl1pQ/bszijeNj7ziLR36tqwSI0UEhF94rEjs29Jzj/1m3ryt8VjsidxVLV/CJ1vK8rFyB1EoKYJHAfQIDAQAB";
+            var cipher = new Cipher();
+            var messageBytes = new Bytes(plain, "UTF8");
+            var encryptedBytes = cipher.encryptBytes(messageBytes, pemKey, "RSA", null, 0);
+            var encryptedString = Encoding.toBase64(encryptedBytes);
+
+            return encryptedString;
+        },
+
         // -----------------------+
         // Talkable Configuration |
         // -----------------------+
@@ -68,7 +82,7 @@ function TalkableHelper() {
             var URLUtils = require("dw/web/URLUtils");
             var data = {
                 customer: {
-                    email: order.customerEmail,
+                    email: this.encryptParam(order.customerEmail),
                     first_name: order.billingAddress.firstName,
                     last_name: order.billingAddress.lastName,
                     customer_id: order.customerNo
@@ -133,7 +147,7 @@ function TalkableHelper() {
             ) {
                 var profile = customer.profile;
                 data = {
-                    email: profile.email,
+                    email: this.encryptParam(profile.email),
                     first_name: profile.firstName,
                     last_name: profile.lastName,
                     customer_id: profile.customerNo
