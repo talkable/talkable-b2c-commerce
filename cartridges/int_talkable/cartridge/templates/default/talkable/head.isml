@@ -7,8 +7,9 @@
   <script type="text/javascript">
     var _talkableq = _talkableq || [];
     _talkableq.push(["init", {
-      site_id: "${pdict.talkableSiteId}"
-    }]);
+    site_id: "${pdict.talkableSiteId}",
+    integration_platform: "sfcc"
+  }]);
 
     _talkableq.push(["authenticate_customer", JSON.parse("<isprint value="${pdict.talkableData}" encoding="jsonvalue"/>")]);
     <isif condition="${pdict.isRegisterAffiliateEnabled}">_talkableq.push(["register_affiliate", {}]);</isif>
